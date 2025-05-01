@@ -1,12 +1,40 @@
-# React + Vite
+# Poke Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Poke Explorer Screenshot](./src/assets/Screenshot%20(57).png)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Explore the first 150 Pokémon with this interactive data explorer powered by the [PokeAPI](https://pokeapi.co/). Search and filter Pokémon by name and type using a clean and responsive React interface.
 
-## Expanding the ESLint configuration
+🔗 Live Demo: [poke-explorer-alpha.vercel.app](https://poke-explorer-alpha.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- 🔍 **Search by Name**: Instantly search Pokémon by name.
+- 🧪 **Filter by Type**: Narrow results by selecting one or multiple types.
+- 💡 **Interactive UI**: Hover effects, responsive layout, and clean design.
+- ⚡ **Fast Performance**: Fetches only the first 150 Pokémon for quick browsing.
+
+## Technologies Used
+
+- **React** (with Vite)
+- **JavaScript**
+- **CSS** (separate `index.css` file for styling)
+- **PokeAPI** for Pokémon data
+- **Vercel** for deployment
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/poke-explorer.git
+   cd poke-explorer
+
+##Made with ❤️ using React and the PokeAPI.
+
