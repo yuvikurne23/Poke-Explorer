@@ -36,5 +36,5 @@ Explore the first 150 Pokémon with this interactive data explorer powered by th
    git clone https://github.com/your-username/poke-explorer.git
    cd poke-explorer
 
-##Made with ❤️ using React and the PokeAPI.
+Made with ❤️ using React and the PokeAPI.
 
