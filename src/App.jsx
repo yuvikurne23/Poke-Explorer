@@ -16,20 +16,26 @@ function App() {
 
   // Throttled fetching of Pokémon details
   const fetchAllPokemon = async () => {
-    const results = [];
-    for (let i = 1; i <= 150; i++) {
-      try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-        const data = await response.json();
-        results.push(data);
-        await delay(150); 
-      } catch (error) {
-        console.error(`Failed to fetch Pokémon ID ${i}:`, error);
-      }
+    try {
+      // Fetch list of first 150 Pokémon with names and URLs
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=150');
+      const data = await response.json();
+  
+      // Extract URLs for each Pokémon and fetch them in parallel
+      const pokemonDetails = await Promise.all(
+        data.results.map(async (pokemon) => {
+          const res = await fetch(pokemon.url);
+          return await res.json();
+        })
+      );
+  
+      return pokemonDetails;
+    } catch (error) {
+      console.error('Failed to fetch Pokémon list:', error);
+      return [];
     }
-    return results;
   };
-
+  
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
@@ -42,9 +48,10 @@ function App() {
         setLoading(false);
       }
     };
-
+  
     fetchPokemons();
   }, []);
+  
 
   useEffect(() => {
     const filteredList = pokemons.filter((p) => {
